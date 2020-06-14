@@ -1,0 +1,36 @@
+kind: pipeline
+type: docker
+name: trader
+
+steps:
+  - name: install
+    image: node
+    commands:
+      # - yarn config set cache-folder /drone/src/yarn_cache
+      - yarn config set registry https://mirrors.sjtug.sjtu.edu.cn/npm-registry
+      - yarn install --pure-lockfile
+    when:
+      branch:
+        - master
+  
+  - name: build
+    image: node
+    commands:
+      - unset CI
+      - yarn build
+    when:
+      branch:
+        - master
+
+  - name: docker
+    image: plugins/docker
+    settings:
+      username: wwwumr
+      password: 
+        from_secret: dockerhub_secrets
+      repo: wwwumr/trader
+      tags:
+        - v1.0.1
+    when:
+      branch:
+        - master
