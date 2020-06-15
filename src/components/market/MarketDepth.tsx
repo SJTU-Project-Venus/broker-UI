@@ -23,6 +23,7 @@ import  { MarketDepthStateProps, Data }  from '../../redux/reducer/ReduxState';
 const cellStyle = {
 	borderRight: '1px solid grey',
 	borderLeft: '1px solid grey',
+	lineHeight:0.2
 };
 
 interface TradersProps {
@@ -300,6 +301,7 @@ const MarketDepth = () => {
 					headerStyle: {
 						backgroundColor: 'rgb(248,248,248)',
 					},
+					paging:false
 				}}
 				icons={{
 					NextPage: React.forwardRef((props, ref) => {

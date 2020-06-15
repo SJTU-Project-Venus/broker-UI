@@ -198,7 +198,6 @@ const CustomPaginationActionsTable = () => {
       <Table className={classes.table} aria-label="custom pagination table">
       <TableHead>
               <TableRow>
-                <TableCell>订单编号</TableCell>
                 <TableCell>交易期货</TableCell>
                 <TableCell>交易时间</TableCell>
                 <TableCell>交易价格</TableCell>
@@ -215,7 +214,6 @@ const CustomPaginationActionsTable = () => {
             : data
           ).map((elem) => (
             <TableRow key={elem.id}>
-                    <TableCell>{elem.id}</TableCell>
           <TableCell>{elem.futureName}</TableCell>
                     <TableCell>{elem.creationTime}</TableCell>
                     <TableCell>{elem.price}</TableCell>
