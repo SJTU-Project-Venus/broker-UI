@@ -1,6 +1,8 @@
 enum ActionTypes {
   LOGIN = 'LOGIN',
-  LOGOUT = 'LOGOUT'
+  LOGOUT = 'LOGOUT',
+  MarketDepth = 'MARKETDEPTH',
+  Dealer = 'DEALER'
 }
 
 export default ActionTypes

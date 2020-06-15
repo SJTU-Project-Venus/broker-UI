@@ -13,6 +13,18 @@ const baseReducer = (state = initialReduxState.base, action: AnyAction) => {
 		case ActionTypes.LOGOUT: {
 			return { ...initialReduxState.base };
 		}
+		case ActionTypes.MarketDepth:{
+			return {
+				...state,
+				marketDepth: action.marketDepth,
+			}
+		}
+		case ActionTypes.Dealer:{
+			return{
+				...state,
+				dealers:action.dealers
+			}
+		}
 		default: {
 			return state;
 		}
