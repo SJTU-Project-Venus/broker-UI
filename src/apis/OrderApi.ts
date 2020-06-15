@@ -1,7 +1,3 @@
-import { TRADER_BACKEND } from './BaseUrlConfig';
-import axios from 'axios';
-import store from '../redux/store/Store';
-
 export enum OrderType {
 	LIMIT = 'LIMIT',
 	STOP = 'STOP',
@@ -79,31 +75,3 @@ export interface OrderBlotterProps {
 	sellerOrderId: string;
 	buyerTraderDetailName: string;
 }
-
-const BaseApi = axios.create({
-	baseURL: TRADER_BACKEND,
-	headers: {
-		'Content-Type': 'application/json',
-	},
-});
-
-const OrderApi = {
-	createOrder: (order: TraderOrder) => {
-		return BaseApi.post('/order/create', order, {
-			params: {
-				access_token: store.getState().base.user.access_token,
-			},
-		});
-	},
-	getHistory: () => {
-		const { traderName, access_token } = store.getState().base.user;
-
-		return BaseApi.get('/order/history/'.concat(traderName), {
-			params: {
-				access_token: access_token,
-			},
-		});
-	},
-};
-
-export default OrderApi;
