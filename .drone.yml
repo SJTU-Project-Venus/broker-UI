@@ -30,7 +30,7 @@ steps:
         from_secret: dockerhub_secrets
       repo: wwwumr/broker
       tags:
-        - one
+        - two
     when:
       branch:
         - master
