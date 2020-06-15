@@ -23,6 +23,7 @@ import  { MarketDepthStateProps, Data }  from '../../redux/reducer/ReduxState';
 const cellStyle = {
 	borderRight: '1px solid grey',
 	borderLeft: '1px solid grey',
+	lineHeight:0.2
 };
 
 interface TradersProps {
@@ -294,6 +295,7 @@ const MarketDepth = () => {
 				options={{
 					search: false,
 					sorting: false,
+					paging:false,
 					pageSize: 10,
 					pageSizeOptions: [10],
 					paginationType: 'normal',
