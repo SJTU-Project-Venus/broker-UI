@@ -28,9 +28,9 @@ steps:
       username: wwwumr
       password: 
         from_secret: dockerhub_secrets
-      repo: wwwumr/trader
+      repo: wwwumr/broker
       tags:
-        - v1.0.1
+        - one
     when:
       branch:
         - master
